@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scriptic", "scriptic\scriptic.csproj", "{5EF21C90-DDB2-4417-AB3F-9390C304DFC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScripticTester", "ScripticTester\ScripticTester.csproj", "{F93182FB-CAA0-448B-B1BA-AB176584B4C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EF21C90-DDB2-4417-AB3F-9390C304DFC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF21C90-DDB2-4417-AB3F-9390C304DFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF21C90-DDB2-4417-AB3F-9390C304DFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF21C90-DDB2-4417-AB3F-9390C304DFC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93182FB-CAA0-448B-B1BA-AB176584B4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93182FB-CAA0-448B-B1BA-AB176584B4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93182FB-CAA0-448B-B1BA-AB176584B4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93182FB-CAA0-448B-B1BA-AB176584B4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {305F276F-8D7B-487C-8719-15FCEF7EBEFE}
+	EndGlobalSection
+EndGlobal
