@@ -7,30 +7,36 @@ namespace scriptic.Functions
     {
         #region In Memory Compression/Decompression
 
-        public static byte[] CompressStream(this byte[] originalSource)
+        public static byte[] CompressStream(byte[] originalSource)
         {
-            using var outStream = new MemoryStream();
-            using (var gzip = new GZipStream(outStream, CompressionMode.Compress))
-            {
-                gzip.Write(originalSource, 0, originalSource.Length);
-            }
-
-            return outStream.ToArray();
-        }
-
-        public static byte[] DecompressStream(this byte[] originalSource)
-        {
-            using var source = new MemoryStream(originalSource);
             using (var outStream = new MemoryStream())
             {
-                using (var gzip = new GZipStream(outStream, CompressionMode.Decompress))
+                using (var gzip = new GZipStream(outStream, CompressionMode.Compress))
                 {
-                    gzip.CopyTo(outStream);
+                    gzip.Write(originalSource, 0, originalSource.Length);
                 }
 
                 return outStream.ToArray();
             }
         }
+
+        public static byte[] DecompressStream(byte[] originalSource)
+        {
+            using (var source = new MemoryStream(originalSource))
+            {
+
+                using (var outStream = new MemoryStream())
+                {
+                    using (var gzip = new GZipStream(source, CompressionMode.Decompress))
+                    {
+                        gzip.CopyTo(outStream);
+                    }
+
+                    return outStream.ToArray();
+                }
+            }
+        }
+
         #endregion
     }
 }
