@@ -6,55 +6,30 @@ namespace scriptic.Functions
     {
         #region QuickSort
 
-        public static void Quick_Sort<T>(IComparable<T>[] arr, int left, int right)
+        public static void QuickSort<T>(T[] items, int left, int right) where T : IComparable
         {
-            if (left < right)
+            var i = left; var j = right;
+            IComparable pivot = items[left];
+
+            while (i <= j)
             {
-                int pivot = Partition(arr, left, right);
+                for (; (items[i].CompareTo(pivot) < 0) && (i.CompareTo(right) < 0); i++) ;
+                for (; (pivot.CompareTo(items[j]) < 0) && (j.CompareTo(left) > 0); j--) ;
 
-                if (pivot > 1)
-                {
-                    Quick_Sort(arr, left, pivot - 1);
-                }
-                if (pivot + 1 < right)
-                {
-                    Quick_Sort(arr, pivot + 1, right);
-                }
+                if (i <= j)
+                    Swap(ref items[i++], ref items[j--]);
             }
-
+            if (left < j) QuickSort(items, left, j);
+            if (i < right) QuickSort(items, i, right);
         }
-        private static int Partition<T>(IComparable<T>[] arr, int left, int right)
+        private static void Swap<T>(ref T x, ref T y)
         {
-            IComparable<T> pivot = arr[left];
-            while (true)
-            {
-
-                while (arr[left].CompareTo((T)pivot) < 0) 
-                {
-                    left++;
-                }
-
-                while (arr[right].CompareTo((T)pivot) > 0)
-                {
-                    right--;
-                }
-
-                if (left < right)
-                {
-                    if (arr[left] == arr[right]) return right;
-
-                    T temp = (T)arr[left];
-                    arr[left] = arr[right];
-                    arr[right] = (IComparable<T>)temp;
-                }
-                else
-                {
-                    return right;
-                }
-            }
+            var temp = x;
+            x = y;
+            y = temp;
         }
+
+
+        #endregion
     }
-
-
-    #endregion
 }
